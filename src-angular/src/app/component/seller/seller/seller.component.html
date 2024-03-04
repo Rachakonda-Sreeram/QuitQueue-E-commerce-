@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Registration Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Seller Registration Form</h2>
+        <form [formGroup]="sellerForm" (ngSubmit)="registerSeller()" class="col-lg-12">
+            <div class="form-group">
+                <label for="sellerName">Seller Name</label>
+                <input type="text" class="form-control" id="sellerName" formControlName="sellerName"
+                    [ngClass]="{'is-invalid': submitted && f['sellerName'].errors}">
+                <div *ngIf="submitted && f['sellerName'].errors" class="invalid-feedback">
+                    <div *ngIf="f['sellerName'].errors?.['required']">Seller Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="businessName">Business Name</label>
+                <input type="text" class="form-control" id="businessName" formControlName="businessName"
+                    [ngClass]="{'is-invalid': submitted && f['businessName'].errors}">
+                <div *ngIf="submitted && f['businessName'].errors" class="invalid-feedback">
+                    <div *ngIf="f['businessName'].errors?.['required']">Business Name is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber"
+                    [ngClass]="{'is-invalid': submitted && f['phoneNumber'].errors}">
+                <div *ngIf="submitted && f['phoneNumber'].errors" class="invalid-feedback">
+                    <div *ngIf="f['phoneNumber'].errors?.['required']">Phone Number is required</div>
+                    <div *ngIf="f['phoneNumber'].errors?.['pattern']">Please enter a valid Phone Number</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email"
+                    [ngClass]="{'is-invalid': submitted && f['email'].errors}">
+                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                    <div *ngIf="f['email'].errors?.['required']">Email is required</div>
+                    <div *ngIf="f['email'].errors?.['email']">Please enter a valid email address</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" formControlName="address"
+                    [ngClass]="{'is-invalid': submitted && f['address'].errors}">
+                <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
+                    <div *ngIf="f['address'].errors?.['required']">Address is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sellingDomain">Selling Domain</label>
+                <select class="form-control" id="sellingDomain" formControlName="sellingDomain"
+                    [ngClass]="{'is-invalid': submitted && f['sellingDomain'].errors}">
+                    <option value="">Select Selling Domain</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="Furniture">Furniture</option>
+                </select>
+                <div *ngIf="submitted && f['sellingDomain'].errors" class="invalid-feedback">
+                    <div *ngIf="f['sellingDomain'].errors?.['required']">Selling Domain is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" formControlName="username"
+                    [ngClass]="{'is-invalid': submitted && f['username'].errors}">
+                <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                    <div *ngIf="f['username'].errors?.['required']">Username is required</div>
+                    <div *ngIf="f['username'].errors?.['startsWithSEL_']">Username must start with "SEL_"</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password"
+                    [ngClass]="{'is-invalid': submitted && f['password'].errors}">
+                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                    <div *ngIf="f['password'].errors?.['required']">Password is required</div>
+                    <div *ngIf="f['password'].errors?.['pattern']">Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="role">Role</label>
+                <input type="text" class="form-control" id="role" formControlName="role" [value]="'seller'"
+                    readonly>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+
+<div class="container">
+    
+    <div class="form-container">
+        <div class="mb-3 center-btn">
+            <button class="btn btn-primary" style = "background: #4c0420;" type="button" (click)="sendOtp()">Send OTP</button>
+        </div>
+        <h2 class="mb-3">Please enter the OTP sent to the registered phone number</h2>
+        <form (ngSubmit)="submitOtp()">
+            <div class="form-group">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" class="form-control" id="otp" name="otp" [(ngModel)]="otp" required>
+            </div>
+            <br>
+            <div class="center-btn">
+                <button type="submit" class="btn btn-primary"style = "background: #4c0420;">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+/* background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg'); */
+background-image: url(https://img.freepik.com/free-photo/fast-fashion-concept-with-full-clothing-store_23-2150871356.jpg?t=st=1709383964~exp=1709387564~hmac=be0f4e94509f5772cb360426b37c20a3bcc137c6d225a80e827152dd8ef06577&w=900);
+background-size: cover;
+background-repeat: no-repeat;
+/* height: 100%; */
+font-family: 'Numans', sans-serif;
+/* margin: 0px; */
+min-height: 100vh;
+width: 100%;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 370px;
+margin-top: 50px;;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+/* .social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #a5818f;
+} */
+
+/* .social_icon span:hover{
+color: white;
+cursor: pointer;
+} */
+
+.card-header h3{
+color: white;
+}
+
+/* .social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+} */
+i{
+  padding: 3px 6px 6px 5px;
+}
+.input-group-prepend span{
+width: 50px;
+background-color: #a5818f;
+color: #4c0420;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+input:focus{
+  outline: 0 0 0 0  !important;
+  box-shadow: 0 0 0 0 !important;
+  
+  }
+
+
+/* .login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+} */
+#button{
+  color:#4c0420;
+  background-color: #a5818f;
+  width: 30vh;
+}
+#button:hover{
+  color:black;
+  background-color: #4c0420;
+}
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+
+input{
+  
+  margin-bottom: 30px;
+} 
+button{
+  position: relative;
+  align-items: center;
+  margin-top: 5%;
+}
+.card-footer{
+  height:15%;
+  text-align: center;
+  padding-top: 3%;
+}
+.card-header{
+  text-align: center;
+}
+form{
+  margin-top: 9%;
+}

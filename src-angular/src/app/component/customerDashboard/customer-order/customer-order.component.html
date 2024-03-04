@@ -1,0 +1,77 @@
+<div class="container">
+    <app-page-title [title]="title" />
+    <div class="order-item-container">
+      <div *ngIf="orders?.length===0" class="no-items">
+        There are no orders placed
+      </div>
+      <div *ngIf="orders?.length!==0">
+      <div *ngFor="let order of orders">
+        <div class="row order-item g-0" style="display: flex; align-items: center;">
+            <div class="col-md-4">
+                <table>
+                    <tr>
+                        <td>
+                            Order Id :
+                        </td>
+                        <td>
+                            {{order.orderId}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Order date :
+                        </td>
+                        <td>
+                            {{order.orderDate}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Delivery date :
+                        </td>
+                        <td>
+                            {{order.orderItems[0].deliveryDate}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Total amount :
+                        </td>
+                        <td>
+                           {{order.totalAmount}}
+                        </td>
+                    </tr>
+                </table>
+               
+            </div>
+            <div class="col-md-8" style="background-color: #fff; padding: .5rem; margin: .5rem 0; border-radius: .3rem;;">
+                <table>
+                    <tr>
+                        <td [width]="'20%'">
+                            Products :
+                        </td>
+                        <td>
+                            <span *ngFor="let orderItem of order.orderItems">
+                                {{ orderItem.product.brand+' '+orderItem.product.productName+'  ( '+orderItem.quantity+' ), '}}
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Order status :
+                        </td>
+                        <td>
+                           {{order.orderItems[0].statusDescription}}
+                        </td>
+                    </tr>
+                  
+                </table>
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  

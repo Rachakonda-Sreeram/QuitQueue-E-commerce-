@@ -1,0 +1,50 @@
+<div class="container">
+  <app-page-title [title]="title" />
+  <div class="cart-item-container">
+    <div *ngIf="items.length===0" class="no-items">
+      There are no items in the cart
+    </div>
+    <div *ngIf="items.length!==0">
+    <div *ngFor="let item of items; let i = index">
+      <div class="cart-item">
+        <div class="img-container">
+          <img src="assets/jeans.jpg" width="80px" alt="image" />
+        </div>
+
+        <div class="product-details">
+          <div class="left">
+            <div class="product-name">
+              {{ item.product.productName }}
+            </div>
+            <div class="product-desc">
+              {{ item.product.description }}
+            </div>
+            <div class="product-quant">
+              Quantity :
+              <input type="number" [(ngModel)]="newQuantities[i]" placeholder="Enter quantity" style="font-weight: bold; padding: 0.5rem; font-size: 1.1rem" />
+              <button class="update-btn" style="background-color: #4c0420; border-color: #4c0420; color: white; margin-left: 5px;" (click)="addProductToCart(item.product.productId, newQuantities[i])">Change Quantity</button>
+          </div>
+          
+            
+          </div>
+          <div class="right">
+            <div class="price">${{ item.itemQuantity * item.product.price }}</div>
+            <div class="dustbin" (click)="deleteCartItem(item.product.productId)">
+              <i class="fa-solid fa-trash"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="footer" *ngIf="items.length!==0">
+    Total amount:
+    <span class="price">
+      ${{grandTotal}}
+    </span> 
+    <button class="mini-btn" [disabled]="items.length===0" [routerLink]="'/customer/checkout'">
+      Checkout
+    </button>
+  </div>
+</div>

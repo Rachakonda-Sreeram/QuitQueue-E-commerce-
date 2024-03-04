@@ -1,0 +1,16 @@
+
+<div class="container-fluid g-0">
+  <app-customer-header (sideNavToggled)="customerSideNavStatus = $event;">
+</app-customer-header> 
+
+  <main>
+    <app-customer-side-nav [customerSideNavStatus]="customerSideNavStatus" [ngClass]="{'app-customer-side-nav-open':customerSideNavStatus}"/>
+    
+    <div class="display-area" [ngClass]="{'display-area-shrink': customerSideNavStatus}">
+      <div class="scrollable">
+      <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
+  </div>
+

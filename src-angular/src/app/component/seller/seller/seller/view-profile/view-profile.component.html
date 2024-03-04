@@ -1,0 +1,46 @@
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td><strong>Seller Id:</strong></td>
+                            <td>{{ Profile.sellerId }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Name:</strong></td>
+                            <td>{{ Profile.sellerName }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email:</strong></td>
+                            <td>{{ Profile.email }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phone Number:</strong></td>
+                            <td>{{ Profile.phoneNumber }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Address:</strong></td>
+                            <td>{{ Profile.address }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Username:</strong></td>
+                            <td>{{ Profile.username }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Selling Domain:</strong></td>
+                            <td>{{ Profile.sellingDomain }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center mt-3">
+                <button class="btn btn-primary" style="background: #4c0420;" (click)="goBack()">Back</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center mt-3">
+    <button class="btn btn-primary" style = "background: #4c0420;"  (click)="goBack()">Back</button>
+  </div>

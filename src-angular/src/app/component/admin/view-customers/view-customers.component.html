@@ -1,0 +1,48 @@
+<div class="card">
+    <h1 class="text-center p-5">All Customers</h1>
+    <div class="container p-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">UserName</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Contact Number</th>
+                    <th scope="col">E mail Address</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Orders</th>
+                    
+                    <th scope="col">Actions</th>
+                </tr>
+                
+              
+            </thead>
+            <tbody>
+              <tr *ngFor="let cus of customer">
+                <td >
+                {{cus.username}}
+                </td>
+                <td>{{cus.customerName}}</td>
+                <td>{{cus.gender}}</td>
+                <td>{{cus.contactNumber}}</td>
+                <td>{{cus.email}}</td>
+                <td>{{cus.address.city}}</td>
+                
+                
+                <td>
+                  <ng-container *ngFor="let order of cus.order; let last = last">
+                    {{order.orderId}}{{ !last ? ', ' : '.' }}
+                  </ng-container>
+                </td>
+                <td style = "color: #4c0420;">
+                  <i class="fas fa-trash-alt" style="cursor: pointer;" (click)="removeCustomer(cus.customerId)"></i>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+</div>
+<div class="text-center mt-3">
+  <button class="btn btn-primary" style = "background: #4c0420;"  (click)="goBack()">Back</button>
+</div>

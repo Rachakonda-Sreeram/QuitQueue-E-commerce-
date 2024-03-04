@@ -1,0 +1,49 @@
+<div class="card" style="margin-top:30px">
+    <h1 class="text-center p-5">All Products</h1>
+    <div class="container p-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Product Id</th>
+                    <th scope="col">Seller Id</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Image URL</th>
+                    <th scope="col">Product Description</th>
+                    <th scope="col">Product Price</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Stock Quantity</th>
+                    <th scope="col">Sub Category Id</th>
+                    
+                    
+
+                    <th scope="col">Actions</th>
+                </tr>
+                
+              
+            </thead>
+            <tbody>
+              <tr *ngFor="let prod of product">
+                <td >
+                {{prod.productId}}
+                </td>
+                <td>{{prod.seller.sellerId}}</td>
+                <td>{{prod.productName}}</td>
+                <td>{{prod.productImageURL}}</td>
+                <td>{{prod.description}}</td>
+                <td>{{prod.price}}</td>
+                <td>{{prod.brand}}</td>
+                <td>{{prod.stockQuantity}}</td>
+                <td>{{prod.subCategory.subCategoryId}}</td>
+                <td style = "color: #4c0420;">
+                  <i class="fas fa-trash-alt" style="cursor: pointer;" (click)="deleteProduct(prod.productId)"></i>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+</div>
+<div class="text-center mt-3">
+  <button class="btn btn-primary" style = "background: #4c0420;"  (click)="goBack()">Back</button>
+</div>
+

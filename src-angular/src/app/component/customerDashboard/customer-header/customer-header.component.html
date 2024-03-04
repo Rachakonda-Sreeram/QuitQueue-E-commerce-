@@ -1,0 +1,61 @@
+
+<nav class="navbar navbar-expand navbar-dark px-2">
+    <div class="side-nav-button p-2 me-3 text-light" (click)="sideNavToggle()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <a class="navbar-brand px-4" href="#">Quit Queue</a>
+    <div class="navbar-collapse ">
+       <ul class="navbar-nav me-auto">
+        <!-- <li class="nav-item dropdown">
+             <a class="nav-link dropdown toggle" href="#" role="button" data-bs-toggle ="dropdown">
+                Clothing
+             </a>
+             <ul class="dropdown-menu dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Shirts</a></li>
+                  <li><a class="dropdown-item" href="#">Bottom Wear</a></li>
+                  <li><a class="dropdown-item" href="#">Tops</a></li>
+                  <li><a class="dropdown-item" href="#">Dresses</a></li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown toggle" href="#" role="button" data-bs-toggle ="dropdown">
+              Electronics
+            </a>
+            <ul class="dropdown-menu dropdown-menu">
+                 <li><a class="dropdown-item" href="#">Phone</a></li>
+                 <li><a class="dropdown-item" href="#">Speaker</a></li>
+                 <li><a class="dropdown-item" href="#">Watch</a></li>
+           </ul>
+       </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown toggle" href="#" role="button" data-bs-toggle ="dropdown">
+          Furnitures
+        </a>
+        <ul class="dropdown-menu dropdown-menu">
+             <li><a class="dropdown-item" href="#">Sofa</a></li>
+             <li><a class="dropdown-item" href="#">Bed</a></li>
+       </ul>
+   </li> -->
+       </ul>
+    </div>
+    <!-- <div>
+        <app-search *ngIf="showSearchComponent"></app-search>
+    </div> -->
+    <form class="d-flex me-5" (ngSubmit)="getAllProductsBySubcategory(searchQuery)" >
+        <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)]="searchQuery" name="searchQuery">
+        <button class="btn btn-outline-light" type="submit" >Search</button>
+       
+    </form>
+    <!-- <div class="profile-logo dropstart">
+        <button class="btn btn-outline-light dropdown-toggle"  data-bs-toggle="dropdown">
+            Customer
+        </button>
+        <ul class="dropdown-menu dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+    </div> -->
+    <a class="profile" [routerLink]="['view-profile']"><i class="fa-solid fa-circle-user fa-2xl" style="color: #f3e2ee; padding:1.2rem;"></i></a>
+    <!-- <button class="btn btn-primary"  -->
+        <!-- <button type="button"><i class="fas fa-user-circle"></i></button> -->
+    </nav>

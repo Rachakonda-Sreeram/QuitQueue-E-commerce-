@@ -1,0 +1,27 @@
+<!-- <body> -->
+<app-page-title [title]="title + searchData.query" />
+<div *ngIf="searchData.result.length === 0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title">No Product Found</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="searchData.result.length !== 0">
+  <div *ngFor="let prod of searchData.result" style="display: inline-block">
+    <app-card
+      [title]="prod.productName"
+      [prodId]="prod.productId"
+      [desc]="prod.description"
+      [price]="prod.price"
+      [category]="prod.subCategory.category.categoryName"
+    ></app-card>
+  </div>
+</div>
+<!-- </body> -->

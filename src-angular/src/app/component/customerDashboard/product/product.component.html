@@ -1,0 +1,50 @@
+
+<app-page-title [title]="title">
+    <div style="display: flex; ">
+  <div class="dropdown-center" style="padding: 1rem;">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Sort by...
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        <a class="dropdown-item" (click)="sortProducts('asc')">Low to high</a>
+      </li>
+      <li>
+        <a class="dropdown-item" (click)="sortProducts('desc')">High to low</a>
+      </li>
+    </ul>
+  </div>
+  <div class="dropdown-center" style="padding: 1rem;"> 
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Brands
+    </button>
+    <ul class="dropdown-menu">
+
+      <li *ngFor="let brand of brands" id="brand">
+        <a class="dropdown-item" (click)="viewByBrand(brand)">{{brand}}</a>
+      </li>
+    </ul> 
+ </div>
+</div>
+</app-page-title>
+
+
+<div *ngFor="let product of copyList" style="display: inline-block">
+  <app-card
+    [title]="product.productName"
+    [prodId]="product.productId"
+    [desc]="product.description"
+    [price]="product.price"
+    [category]="product.subCategory.category.categoryName"
+  ></app-card>
+</div>

@@ -1,0 +1,23 @@
+<div class="card-container">
+    <div class="card-img">
+        <img width="180px" src="{{img}}" alt="jeans" />
+    </div>
+    <div>
+        <div class="card-title">{{title}}</div>
+        <div class="card-price">${{price}}</div>
+        <div class="card-desc">{{desc}}</div>
+    </div>
+    
+    <div >
+        <button  class ="add-to-cart-btn" type="button" value="submit" (click)="addToCart(prodId)"  [class.added]="isAddedToCart"> {{ isAddedToCart ? 'Added to Cart' : 'Add To Cart' }}</button>
+        
+    </div>
+   
+</div>
+
+
+ <!-- <div *ngIf="showSecondDiv" style="width: 100%; padding-top: .5rem; display: flex; justify-content: space-around; align-items: center;">
+        <button class="mini-btn" (click)="decrement()">-</button>
+        <div class="quant">{{count$ | async}}</div>
+        <button class="mini-btn" (click)="increment()">+</button>
+    </div> -->

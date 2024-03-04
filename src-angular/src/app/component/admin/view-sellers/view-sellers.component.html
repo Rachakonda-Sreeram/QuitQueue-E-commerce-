@@ -1,0 +1,43 @@
+<div class="card">
+    <h1 class="text-center p-5">All Sellers</h1>
+    <div class="container p-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Seller Id</th>
+                    <th scope="col">UserName</th>
+                    <th scope="col">Seller Name</th>
+                    <th scope="col">Business Name</th>
+                    <th scope="col">Contact Number</th>
+                    <th scope="col">E mail Address</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Selling Domian</th>
+                    
+                    <th scope="col">Actions</th>
+                </tr>
+                
+              
+            </thead>
+            <tbody>
+              <tr *ngFor="let sel of seller">
+                <td >
+                {{sel.sellerId}}
+                </td>
+                <td>{{sel. username}}</td>
+                <td>{{sel.sellerName}}</td>
+                <td>{{sel.businessName}}</td>
+                <td>{{sel.phoneNumber}}</td>
+                <td>{{sel.email}}</td>
+                <td>{{sel. address}}</td>
+                <td>{{sel.sellingDomain}}</td>
+                <td><button class="btn btn-danger" type="button" (click)="deleteSeller(sel.sellerId)">Delete</button></td>
+        
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+</div>
+<div class="text-center mt-3">
+  <button class="btn btn-primary" style = "background: #4c0420;"  (click)="goBack()">Back</button>
+</div>

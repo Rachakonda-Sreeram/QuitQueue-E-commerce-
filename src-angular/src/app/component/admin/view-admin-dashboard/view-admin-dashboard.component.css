@@ -1,0 +1,24 @@
+.col-3 {
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.card {
+    transition: box-shadow 0.3s, background-color 0.3s;
+    background-color: #a5818f;
+
+     
+}
+
+.card:hover {
+    box-shadow: 5px 5px #a5818f; 
+    background-color: #4c0420;
+}
+
+.card:hover .btn {
+    color: white; 
+    font-weight: bold; 
+}
+.container {
+    height: 100vh; 
+}
